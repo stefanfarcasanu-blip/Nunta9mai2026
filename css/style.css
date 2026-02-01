@@ -1917,3 +1917,28 @@ form label {
 .event-wrap i {
   color: #fff !important;
 }
+/* Pentru tablete și telefoane (max 768px) */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 40px; /* mai mic decât pe desktop */
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p, span {
+    font-size: 14px;
+  }
+
+  /* Asigurăm padding mai mic pe mobil */
+  .container, .col-md-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
