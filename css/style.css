@@ -2224,3 +2224,71 @@ h2 {
     }
 }
 
+#fh5co-header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('images/img_bg_2.jpg');
+    background-size: cover;          /* scalează imaginea să acopere tot */
+    background-position: center top; /* centrează imaginea */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;             /* centrează vertical textul */
+    justify-content: center;         /* centrează orizontal textul */
+    text-align: center;
+    color: #fff;
+}
+
+/* Overlay semi-transparent */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* Conținutul textului deasupra overlay-ului */
+.display-tc {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 20px; /* spațiu interior ca să nu atingă marginile */
+}
+
+/* Titluri */
+h1 {
+    font-size: 3em;
+    margin: 0 0 10px 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Buton */
+.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+/* Ajustări pentru mobil */
+@media (max-width: 767px) {
+    #fh5co-header {
+        min-height: 70vh;           /* reduce înălțimea pe mobil */
+        background-position: center center; /* asigură vizibilitatea imaginii */
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    .btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
