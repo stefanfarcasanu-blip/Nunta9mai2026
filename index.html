@@ -66,45 +66,103 @@
 
 	</head>
 	<body>
-		
-	<div class="fh5co-loader"></div>
-	
+	<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nunta Alina & Alexandru</title>
+    
+    <!-- Bootstrap CSS (asigură-te că ai versiunea 3.4.1 dacă folosești clasele din codul tău) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+    <!-- Stiluri personalizate -->
+    <style>
+        /* Asigură imaginea de fundal să fie responsive */
+        #fh5co-header {
+            background-size: cover;
+            background-position: center center;
+            height: 100vh; /* Înălțime full screen */
+            position: relative;
+        }
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t">
-						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Alina &amp; Alexandru</h1>
-							<header id="fh5co-header" class="fh5co-cover" role="banner"
-          </div>
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0,0,0,0.5); /* semi-transparent */
+        }
+
+        .display-t {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        .display-tc {
+            display: table-cell;
+            vertical-align: middle;
+            color: #fff;
+            padding: 0 15px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Ajustare pentru ecrane mici */
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            .btn {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+
+        /* Centrare countdown */
+        .simply-countdown {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="fh5co-loader"></div>
+
+<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <!-- Folosim col-xs-10 col-xs-offset-1 pentru mobil și col-md-8 col-md-offset-2 pentru desktop -->
+            <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 text-center">
+                <div class="display-t">
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                        <h1>Alina &amp; Alexandru</h1>
+                        <h2>Împreună pentru totdeauna – 9 Mai 2026.</h2>
+                        <div class="simply-countdown simply-countdown-one"></div>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nunta%209%20Mai%202026%20-%20Alina%20%26%20Alexandru&dates=20260509T130000/20260510T000000&ctz=Europe/Bucharest&details=Ceremonie%20religioasa:%2013:00%0ABiserica%20Ortodoxa%20Sfintii%20Arhangheli,%20Str.%20Munteniei%204,%20Cluj-Napoca%0ALink:%20https://goo.gl/maps/6Ww7hC3c8Y62%0A%0APetrecere:%2016:00%0AClujana%20Festa,%20Str.%20Tăbăcarilor%2015C,%20400139,%20Cluj-Napoca%0ALink:%20https://goo.gl/maps/4yF1FgM5Ejv"
+                           target="_blank"
+                           class="btn btn-default btn-sm">
+                            Save the date
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </header>
-
-							<h2>Împreună pentru totdeauna – 9 Mai 2026.</h2>
-							<div class="simply-countdown simply-countdown-one"></div>
-						<a
-  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nunta%209%20Mai%202026%20-%20Alina%20%26%20Alexandru&dates=20260509T130000/20260510T000000&ctz=Europe/Bucharest&details=Ceremonie%20religioasa:%2013:00%0ABiserica%20Ortodoxa%20Sfintii%20Arhangheli,%20Str.%20Munteniei%204,%20Cluj-Napoca%0ALink:%20https://goo.gl/maps/6Ww7hC3c8Y62%0A%0APetrecere:%2016:00%0AClujana%20Festa,%20Str.%20Tăbăcarilor%2015C,%20400139,%20Cluj-Napoca%0ALink:%20https://goo.gl/maps/4yF1FgM5Ejv"
-  target="_blank"
-  class="btn btn-default btn-sm"
->
-  Save the date
-</a>
-
-
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
 
 <!-- Script pentru countdown -->
 <script src="https://cdn.jsdelivr.net/npm/simplycountdown.js@1.5.0/dist/simplyCountdown.min.js"></script>
@@ -125,7 +183,12 @@ simplyCountdown('.simply-countdown-one', {
 });
 </script>
 
+<!-- Bootstrap JS (opțional, pentru dropdown sau alte funcționalități) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+</body>
+</html>
 
 
 	<div id="fh5co-couple">
