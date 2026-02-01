@@ -891,7 +891,7 @@ form label {
 /* ---------- H1 mai sus fără să afecteze restul banner-ului ---------- */
 .fh5co-cover .display-tc h1 {
   position: relative; /* permite mutarea elementului */
-  top: -150px;         /* ajustează cât vrei să urce */
+  top: -10px;         /* ajustează cât vrei să urce */
 }
 
 /* H2 rămâne normal, stilul existent nu se schimbă */
