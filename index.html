@@ -324,24 +324,31 @@
 
 <!-- ================= SCRIPT JS PENTRU GOOGLE SHEET ================= -->
 <script>
-  document.getElementById('attendance-form').addEventListener('submit', function(e){
+  const form = document.getElementById('attendance-form');
+  const messageDiv = document.getElementById('rsvpMessage'); // div unde apare mesajul
+
+  form.addEventListener('submit', function(e){
     e.preventDefault();
     const data = new FormData(this);
 
-    
-		fetch("https://script.google.com/macros/s/AKfycbwI1F3YkGUN6h7UPZQEAi98j7rdivqVxq2Gj1STF_45MDnIse4R2zYRIFdasJHogfebMg/exec", {
-  method: "POST",
-  body: data
-})
-
+    fetch("https://script.google.com/macros/s/AKfycbwI1F3YkGUN6h7UPZQEAi98j7rdivqVxq2Gj1STF_45MDnIse4R2zYRIFdasJHogfebMg/exec", {
+      method: "POST",
+      body: data
+    })
     .then(res => res.text())
     .then(msg => {
-      alert(msg); // mesaj de succes
-      document.getElementById('attendance-form').reset(); // resetează formularul
+      messageDiv.style.color = "green";
+      messageDiv.textContent = "Mulțumim! RSVP-ul tău a fost înregistrat."; // mesaj frumos
+      form.reset(); // resetează formularul
     })
-    .catch(err => alert("Eroare la trimiterea formularului. Verifică Web App-ul Google Script."));
+    .catch(err => {
+      console.error(err);
+      messageDiv.style.color = "red";
+      messageDiv.textContent = "Eroare la trimiterea formularului. Verifică Web App-ul Google Script.";
+    });
   });
 </script>
+
 
 
 
