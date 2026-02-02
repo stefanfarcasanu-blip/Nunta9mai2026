@@ -1980,48 +1980,65 @@ form label {
   pointer-events: none;
 }
 
-/* Background imagine secțiune specifică */
+
+/* Fundal secțiune Bun venit + poze cuplu */
 #fh5co-couple {
-  position: relative;
+  position: relative;           /* asigură că overlay-ul și conținutul rămân peste fundal */
   background-image: url("../images/harta.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  min-height: 600px;
+  min-height: 600px;            /* înălțime pentru desktop */
   display: flex;
-  align-items: center;
+  align-items: center;          /* aliniere verticală centrală */
 }
 
+/* Overlay întunecat */
 #fh5co-couple::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 1;
+  inset: 0;                     /* acoperă tot containerul */
+  background: rgba(0,0,0,0.4);  /* întunecare fundal */
+  z-index: 1;                    /* sub conținut */
 }
 
+/* Conținutul secțiunii peste fundal */
 #fh5co-couple .container {
   position: relative;
   z-index: 10;
   width: 100%;
+  color: white;
 }
 
+/* Ajustare poze și text */
+.couple-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Mobil */
 @media (max-width: 767px) {
   #fh5co-couple {
     min-height: 400px;
-    background-position: top center;
+    background-position: top center;  /* crop mai bun pe mobil */
     padding-top: 40px;
     padding-bottom: 40px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  #fh5co-couple .couple-wrap {
+  .couple-wrap {
     flex-direction: column;
+    align-items: center;
   }
 
-  #fh5co-couple .couple-half {
+  .couple-half {
     margin-bottom: 20px;
   }
 }
+
+
+
