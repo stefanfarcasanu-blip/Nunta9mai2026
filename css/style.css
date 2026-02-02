@@ -1961,7 +1961,7 @@ form label {
   /* Mută tot blocul de text puțin mai sus, dar rămâne centrat */
   .fh5co-cover .display-tc,
   #fh5co-header .display-tc{
-    transform: translateY(-100px); /* ajustează: -20px până la -80px */
+    transform: translateY(-300px); /* ajustează: -20px până la -80px */
   }
 
   /* Mărește numele */
