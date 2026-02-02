@@ -1955,19 +1955,22 @@ form label {
   }
 }
 
-/* ===== Mobile: numele centrat, mai sus și mai mare ===== */
+/* ===== Mobile: doar numele mai sus + mai mare ===== */
 @media (max-width: 768px){
-
-  /* Mută tot blocul de text puțin mai sus, dar rămâne centrat */
-  .fh5co-cover .display-tc,
-  #fh5co-header .display-tc{
-    transform: translateY(-300px); /* ajustează: -20px până la -80px */
-  }
 
   /* Mărește numele */
   .fh5co-cover .display-tc h1,
   #fh5co-header .display-tc h1{
-    font-size: 70px !important;  /* ajustează: 50-70px */
+    font-size: 56px !important;     /* ajustează: 50-70px */
     line-height: 1.05 !important;
+    margin-bottom: 12px !important;
   }
+
+  /* Mută DOAR numele mai sus */
+  .fh5co-cover .display-tc h1,
+  #fh5co-header .display-tc h1{
+    transform: translateY(-35px);   /* ajustează: -20px până la -80px */
+  }
+
 }
+
