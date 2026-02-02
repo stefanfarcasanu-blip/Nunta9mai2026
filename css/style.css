@@ -1869,6 +1869,13 @@ form label {
    2) Secțiunea Evenimentul nostru
    ======================================================= */
 
+/* =======================================================
+   CUSTOM – FIXED (fără dubluri, fără zoom-out / bug animații)
+   1) Prima poză de fundal (banner/header)
+   2) Secțiunea Evenimentul nostru
+   3) Secțiunea Bun venit / Harta
+   ======================================================= */
+
 
 /* -------------------------------------------------------
    1) PRIMA IMAGINE DE FUNDAL (HEADER / COVER)
@@ -1890,8 +1897,9 @@ form label {
 #fh5co-header .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
   z-index: 1;
+  pointer-events: none; /* IMPORTANT: nu blochează click-uri */
 }
 
 /* Conținutul să fie peste overlay */
@@ -1899,11 +1907,34 @@ form label {
 #fh5co-header > .fh5co-container {
   position: relative;
   z-index: 10;
+  text-align: center;
+}
+
+/* Mobile: doar numele mai mare + mutat ușor în sus (FĂRĂ transform) */
+@media (max-width: 768px) {
+  .fh5co-cover .display-tc h1,
+  #fh5co-header .display-tc h1 {
+    font-size: 56px !important;
+    line-height: 1.05 !important;
+    margin-bottom: 12px !important;
+
+    /* FIX: nu folosim transform (strică animațiile) */
+    position: relative;
+    top: -35px;
+  }
+}
+
+/* Butoane din cover/header să fie clickabile */
+.fh5co-cover a.btn,
+#fh5co-header a.btn {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 
 /* -------------------------------------------------------
-   2) EVENIMENTUL NOSTRU (background + afișare casete)
+   2) EVENIMENTUL NOSTRU (background + casete)
    ------------------------------------------------------- */
 
 #fh5co-event {
@@ -1918,6 +1949,7 @@ form label {
   position: absolute;
   inset: 0;
   background: rgba(139, 69, 19, 0.11) !important;
+  pointer-events: none;
 }
 
 /* Casetele (biserică/party) */
@@ -1939,76 +1971,47 @@ form label {
   opacity: 1 !important;
 }
 
-/* Responsive: pe mobil casetele se pun una sub alta */
-@media screen and (max-width: 768px) {
+/* Responsive: pe mobil casetele una sub alta */
+@media (max-width: 768px) {
   #fh5co-event .event-wrap {
     width: 100% !important;
     float: none !important;
     margin-bottom: 20px;
-  }
-
-  #fh5co-event .event-wrap h3,
-  #fh5co-event .event-wrap p,
-  #fh5co-event .event-wrap span,
-  #fh5co-event .event-wrap .event-col {
     text-align: center;
   }
 }
 
-/* ===== Mobile: doar numele mai sus + mai mare ===== */
-@media (max-width: 768px){
-
-  /* Mărește numele */
-  .fh5co-cover .display-tc h1,
-  #fh5co-header .display-tc h1{
-    font-size: 56px !important;     /* ajustează: 50-70px */
-    line-height: 1.05 !important;
-    margin-bottom: 12px !important;
-  }
-
-  /* Mută DOAR numele mai sus */
-  .fh5co-cover .display-tc h1,
-  #fh5co-header .display-tc h1{
-    transform: translateY(-35px);   /* ajustează: -20px până la -80px */
-  }
-
-}
-
-/* Overlay să nu blocheze click-ul */
-#fh5co-header .overlay,
-.fh5co-cover .overlay{
-  pointer-events: none;
-}
 
 /* -------------------------------------------------------
-   SECȚIUNEA BUN VENIT + POZE CUPLU (fundal responsive)
+   3) SECȚIUNEA BUN VENIT + FUNDAL HARTĂ
    ------------------------------------------------------- */
+
 #fh5co-couple {
   position: relative;
   background-image: url("../images/harta.jpg");
-  background-size: cover !important;       /* scalează și taie fundalul corect */
-  background-position: center center !important; 
+  background-size: cover !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
-  min-height: 600px;                        /* ajustează după conținut */
+  min-height: 600px;
 }
 
 /* Overlay întunecat fără a bloca click-ul */
 #fh5co-couple .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3) !important; /* întunecă fundalul */
+  background: rgba(0, 0, 0, 0.3) !important;
   z-index: 1;
-  pointer-events: none;                     /* nu blochează interacțiunile */
+  pointer-events: none;
 }
 
-/* Conținutul peste fundal */
+/* Conținutul peste overlay */
 #fh5co-couple .container {
   position: relative;
   z-index: 10;
   color: white;
 }
 
-/* Pozele și descrierile cuplului */
+/* Layout cuplu */
 .couple-wrap {
   display: flex;
   justify-content: center;
@@ -2017,217 +2020,65 @@ form label {
   flex-wrap: wrap;
 }
 
-/* Crop și aliniere fundal pe mobil */
-@media screen and (max-width: 768px) {
+.couple-half {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.heart {
+  flex: 0 0 auto;
+  font-size: 2rem;
+  margin: 0 20px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
   #fh5co-couple {
-    background-position: top center !important; /* fundal crop-uit corect sus */
-    min-height: 500px;                          /* ajustează după text și poze */
+    background-position: top center !important;
+    min-height: 500px;
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
   .couple-wrap {
-    flex-direction: column;                     /* pozele una sub alta */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
   }
 
-  .couple-half {
-    margin-bottom: 10px;
+  .heart {
+    margin: 10px 0;
   }
 }
 
 
-
-
-
-/* =========================================== */
-/* 1) BANNER PRINCIPAL – FUNDAL + OVERLAY     */
-/* =========================================== */
-.fh5co-cover,
-#fh5co-header {
-  position: relative;
-  width: 100%;
-  min-height: 60vh;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-}
-
-/* Overlay doar pentru fundal */
-.fh5co-cover .overlay,
-#fh5co-header .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1; /* sub text și buton */
-}
-
-/* Text și buton deasupra overlay-ului */
-.fh5co-cover > .fh5co-container,
-#fh5co-header > .fh5co-container {
-  position: relative;
-  z-index: 10;
-  text-align: center; /* centrăm textul */
-}
-
-/* Nume mai mare și mutat sus pe mobil */
-@media (max-width: 768px){
-  .fh5co-cover .display-tc h1,
-  #fh5co-header .display-tc h1 {
-    font-size: 56px !important;
-    line-height: 1.05 !important;
-    margin-bottom: 12px !important;
-    transform: translateY(-35px);
-  }
-}
-
-/* =========================================== */
-/* 2) SECȚIUNEA „BUN VENIT” / POZE             */
-/* =========================================== */
-#fh5co-couple {
-  position: relative;
-  background-image: url("../images/harta.jpg");
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  min-height: 500px; /* poate ajustați după nevoie */
-}
-
-/* Overlay doar pe fundal */
-#fh5co-couple .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4); /* mai deschis, doar pentru fundal */
-  z-index: 1;
-}
-
-/* Conținut peste overlay */
-#fh5co-couple > .container {
-  position: relative;
-  z-index: 10;
-}
-
-/* Responsive: crop mai bun pe mobil */
-@media (max-width: 768px) {
-  #fh5co-couple {
-    background-size: cover !important;
-    background-position: top center !important;
-    min-height: 400px;
-    padding-top: 150px; /* spațiu pentru titlu + text */
-    padding-bottom: 50px;
-  }
-}
-
-/* =========================================== */
-/* 3) EVENT WRAP / CASETE (biserică/party)    */
-/* =========================================== */
-.event-wrap {
-  background-color: rgba(0,0,0,0.5);
-  padding: 20px;
-  border-radius: 5px;
-  float: left;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.event-wrap h3,
-.event-wrap p,
-.event-wrap span,
-.event-wrap i {
-  color: #fff !important;
-  opacity: 1 !important;
-}
-
-/* Pe mobil, coloanele una sub alta */
-@media (max-width: 768px) {
-  .event-wrap {
-    width: 100% !important;
-    float: none !important;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-}
-
-/* =========================================== */
-/* 4) SAVE THE DATE – buton vizibil           */
-/* =========================================== */
-.fh5co-cover a.btn,
-#fh5co-header a.btn {
-  position: relative;
-  z-index: 10; /* deasupra overlay-ului */
-  pointer-events: auto; /* click activ */
-}
-
-
-.couple-wrap {
-    display: flex;
-    flex-wrap: wrap; /* permite să se rupă pe mobil */
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* spațiu între elemente */
-}
-
-/* pentru fiecare jumătate */
-.couple-half {
-    flex: 1 1 300px; /* se ajustează în funcție de lățime */
-    max-width: 400px;
-    text-align: center;
-}
-
-/* inima din mijloc */
-.heart {
-    flex: 0 0 auto; /* să nu se întindă */
-    font-size: 2rem;
-    color: red;
-    margin: 0 20px;
-}
-
-/* responsive: pe mobil stă vertical */
-@media (max-width: 768px) {
-    .couple-wrap {
-        flex-direction: column;
-    }
-
-    .heart {
-        margin: 10px 0;
-    }
-}
-
-
-.my-form {
-    display: flex;
-    flex-wrap: wrap;       /* permite să se rupă pe mobil */
-    gap: 10px;             /* spațiu între elemente */
-    align-items: center;   /* aliniere verticală pe desktop */
-}
-
-
-
+/* -------------------------------------------------------
+   4) FORMULAR (aliniere corectă)
+   ------------------------------------------------------- */
 
 .form-row {
-    display: flex;
-    flex-wrap: wrap;        /* pe mobil, rândurile se rup */
-    justify-content: center; /* centrăm tot pe orizontală */
-    align-items: center;    /* aliniere verticală */
-    gap: 10px;              /* spațiu între elemente */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .form-input {
-    flex: 1 1 150px;       /* se ajustează, minim 150px */
-    padding: 10px;
+  flex: 1 1 150px;
+  padding: 10px;
 }
 
 .form-row label {
-    flex: 0 0 auto;        /* checkbox-urile nu se întind */
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .form-row .btn {
-    flex: 0 0 auto;        /* butonul nu se întinde */
-    margin-left: auto;     /* împinge butonul către mijloc dacă vrei centrare absolută, altfel folosește justify-content: center */
-    padding: 10px 20px;
+  flex: 0 0 auto;
+  padding: 10px 20px;
 }
 
