@@ -329,10 +329,12 @@
     e.preventDefault();
     const data = new FormData(this);
 
-    fetch("https://script.google.com/macros/s/AKfycbwI1F3YkGUN6h7UPZQEAi98j7rdivqVxq2Gj1STF_45MDnIse4R2zYRIFdasJHogfebMg/exec", {
-      method: "POST",
-      body: data
-    })
+    
+		fetch("https://script.google.com/macros/s/AKfycbwI1F3YkGUN6h7UPZQEAi98j7rdivqVxq2Gj1STF_45MDnIse4R2zYRIFdasJHogfebMg/exec", {
+  method: "POST",
+  body: data
+})
+
     .then(res => res.text())
     .then(msg => {
       alert(msg); // mesaj de succes
