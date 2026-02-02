@@ -2202,20 +2202,32 @@ form label {
     align-items: center;   /* aliniere verticală pe desktop */
 }
 
-/* Stil pentru câmpurile formularului */
-.form-input {
-    flex: 1 1 200px;       /* se ajustează, min 200px */
-    padding: 10px;
-    font-size: 1rem;
-}
 
-.button-wrapper {
+
+
+.form-row {
     display: flex;
-    justify-content: center; /* centrăm butonul pe orizontală */
-    margin-top: 20px;
+    flex-wrap: wrap;        /* pe mobil, rândurile se rup */
+    justify-content: center; /* centrăm tot pe orizontală */
+    align-items: center;    /* aliniere verticală */
+    gap: 10px;              /* spațiu între elemente */
 }
 
-.button-wrapper .btn {
-    min-width: 150px;
+.form-input {
+    flex: 1 1 150px;       /* se ajustează, minim 150px */
+    padding: 10px;
+}
+
+.form-row label {
+    flex: 0 0 auto;        /* checkbox-urile nu se întind */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-row .btn {
+    flex: 0 0 auto;        /* butonul nu se întinde */
+    margin-left: auto;     /* împinge butonul către mijloc dacă vrei centrare absolută, altfel folosește justify-content: center */
     padding: 10px 20px;
 }
+
