@@ -268,77 +268,83 @@
         </div>
       </div>
 
-      <!-- Formular -->
-      <div class="row animate-box">
-        <div class="col-md-10 col-md-offset-1">
-          <form class="form-inline" id="attendance-form">
-            <!-- Nume -->
-            <div class="col-md-3 col-sm-3">
-              <div class="form-group">
-                <label for="name" class="sr-only">Nume</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nume" required>
-              </div>
-            </div>
-            <!-- Nr. telefon -->
-            <div class="col-md-3 col-sm-3">
-              <div class="form-group">
-                <label for="phone" class="sr-only">Nr. telefon</label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Nr. telefon" required>
-              </div>
-            </div>
-            <!-- Meniu vegetarian -->
-            <div class="col-md-3 col-sm-3">
-              <div class="form-group">
-                <label class="sr-only" for="vegetarian">Meniu vegetarian</label>
-                <div class="form-control" style="display:flex; align-items:center; gap:10px;">
-                  <input type="checkbox" id="vegetarian" name="vegetarian" value="yes" style="margin:0;">
-                  <span>Doresc meniu vegetarian</span>
-                </div>
-              </div>
-            </div>
 
-			 <!-- Meniu vegan -->
-<div class="col-md-3 col-sm-3">
-  <div class="form-group">
-    <label class="sr-only" for="vegan">Meniu vegan</label>
-    <div class="form-control" style="display:flex; align-items:center; gap:10px;">
-      <input type="checkbox" id="vegan" name="vegan" value="yes" style="margin:0;">
-      <span>Doresc meniu vegan</span>
-    </div>
-  </div>
-</div>
-
-            <!-- Buton trimitere -->
-            <div class="col-md-3 col-sm-3">
-              <div class="form-group">
-                <button type="submit" class="btn btn-default btn-block form-control">Trimite</button>
-              </div>
-            </div>
-          </form>
+<!-- ================= FORMULAR CONFIRMARE PARTICIPARE ================= -->
+<div class="row animate-box">
+  <div class="col-md-10 col-md-offset-1">
+    <form class="form-inline" id="attendance-form">
+      
+      <!-- Nume -->
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
+          <label for="name" class="sr-only">Nume</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Nume" required>
         </div>
       </div>
 
-<!-- Scriptul JS pentru trimiterea datelor în Google Sheet -->
-  <script>
-    document.getElementById('attendance-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      const data = new FormData(this);
-     fetch("https://script.google.com/macros/s/AKfycbz7wiJtLpMJ71kRXpWhELurkMBK2Wp6egDvN75YVCwoZf1wZmQ7--87wJzr_6EW13ecmA/exec", {
-  method: "POST",
-  body: data
-})
+      <!-- Nr. telefon -->
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
+          <label for="phone" class="sr-only">Nr. telefon</label>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Nr. telefon" required>
+        </div>
+      </div>
 
-      .then(res => res.text())
-      .then(msg => {
-        alert(msg);
-        document.getElementById('attendance-form').reset();
-      })
-      .catch(err => alert("Eroare la trimiterea formularului"));
-    });
-  </script>
-</body>
+      <!-- Meniu vegetarian -->
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
+          <label class="sr-only" for="vegetarian">Meniu vegetarian</label>
+          <div class="form-control" style="display:flex; align-items:center; gap:10px;">
+            <input type="checkbox" id="vegetarian" name="vegetarian" value="yes" style="margin:0;">
+            <span>Doresc meniu vegetarian</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meniu vegan -->
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
+          <label class="sr-only" for="vegan">Meniu vegan</label>
+          <div class="form-control" style="display:flex; align-items:center; gap:10px;">
+            <input type="checkbox" id="vegan" name="vegan" value="yes" style="margin:0;">
+            <span>Doresc meniu vegan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buton trimitere -->
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
+          <button type="submit" class="btn btn-default btn-block form-control">Trimite</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- ================= SCRIPT JS PENTRU GOOGLE SHEET ================= -->
+<script>
+  document.getElementById('attendance-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(this);
+
+    fetch("https://script.google.com/macros/s/AKfycbz7wiJtLpMJ71kRXpWhELurkMBK2Wp6egDvN75YVCwoZf1wZmQ7--87wJzr_6EW13ecmA/exec", {
+      method: "POST",
+      body: data
+    })
+    .then(res => res.text())
+    .then(msg => {
+      alert(msg); // mesaj de succes
+      document.getElementById('attendance-form').reset(); // resetează formularul
+    })
+    .catch(err => alert("Eroare la trimiterea formularului. Verifică Web App-ul Google Script."));
+  });
+</script>
 
 
+
+		
 		
 
   <!-- FOOTER -->
