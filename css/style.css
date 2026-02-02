@@ -2195,3 +2195,14 @@ form label {
 }
 
 
+.button-wrapper {
+    display: flex;
+    justify-content: center; /* centrare orizontală */
+    align-items: center;     /* centrare verticală */
+    height: 100vh;           /* întreaga înălțime a paginii */
+}
+
+.button-wrapper .btn {
+    min-width: 200px;       /* lățime minimă pentru buton */
+    padding: 10px 20px;     /* spațiu interior */
+}
