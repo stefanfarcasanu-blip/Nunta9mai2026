@@ -1979,3 +1979,20 @@ form label {
 .fh5co-cover .overlay{
   pointer-events: none;
 }
+/* Background imagine secțiune specifică (păstrat) */
+#fh5co-couple {
+  background-image: url("../images/harta.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative; /* asigură overlay/conținut */
+}
+
+/* Ajustare pentru mobil */
+@media (max-width: 767px) {
+  #fh5co-couple {
+    min-height: 300px; /* ajustează după necesitate */
+    background-size: cover;
+    background-position: top center; /* crop mai bun pe mobil */
+  }
+}
