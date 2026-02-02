@@ -285,73 +285,110 @@
 <h2>Confirmare participare</h2>
 
 <!-- ================= FORMULAR CONFIRMARE PARTICIPARE ================= -->
-<!-- Formular -->
-<div class="row animate-box">
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmare participare 9 Mai 2026</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body { padding: 20px; }
+    #rsvpMessage { margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<h2>Confirmare participare</h2>
+
+<!-- ================= FORMULAR CONFIRMARE PARTICIPARE ================= -->
+<div class="row">
   <div class="col-md-10 col-md-offset-1">
     <form class="form-inline" id="attendance-form">
 
       <!-- Nume -->
       <div class="col-md-3 col-sm-3">
         <div class="form-group">
-          <label for="name" class="sr-only">Nume</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Nume" required>
+          <input type="text" class="form-control" id="name" name="nume" placeholder="Nume" required>
         </div>
       </div>
 
       <!-- Nr. telefon -->
       <div class="col-md-3 col-sm-3">
         <div class="form-group">
-          <label for="phone" class="sr-only">Nr. telefon</label>
-          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Nr. telefon" required>
+          <input type="tel" class="form-control" id="phone" name="telefon" placeholder="Nr. telefon" required>
         </div>
       </div>
 
       <!-- Meniu vegetarian -->
       <div class="col-md-3 col-sm-3">
         <div class="form-group">
-          <label class="sr-only" for="vegetarian">Meniu vegetarian</label>
-
-          <div class="form-control" style="display:flex; align-items:center; gap:10px;">
-            <input type="checkbox" id="vegetarian" name="vegetarian" value="yes" style="margin:0;">
-            <span>Doresc meniu vegetarian</span>
-          </div>
+          <input type="checkbox" id="vegetarian" name="vegetarian">
+          <span>Doresc meniu vegetarian</span>
         </div>
       </div>
 
-      <!-- Buton trimitere -->
+      <!-- Meniu vegan -->
       <div class="col-md-3 col-sm-3">
         <div class="form-group">
-          <button type="submit" class="btn btn-default btn-block form-control">
-            Trimite
-          </button>
+          <input type="checkbox" id="vegan" name="vegan">
+          <span>Doresc meniu vegan</span>
         </div>
+      </div>
+
+      <!-- Buton trimitere centrat -->
+      <div class="col-md-12 text-center" style="margin-top:20px;">
+        <button type="submit" class="btn btn-primary">Trimite</button>
       </div>
 
     </form>
+
+    <!-- Div unde apare mesajul -->
+    <div id="rsvpMessage"></div>
   </div>
 </div>
 
-<!-- Script pentru trimiterea datelor în Google Sheet -->
+<!-- ================= SCRIPT JS PENTRU GOOGLE SHEET ================= -->
 <script>
-document.getElementById('attendance-form').addEventListener('submit', function(e){
-    e.preventDefault();
+const form = document.getElementById('attendance-form');
+const messageDiv = document.getElementById('rsvpMessage');
 
-    const data = new FormData(this);
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-    fetch("https://script.google.com/macros/s/AKfycby04VhxIDQL-1NYi4xKYnxXIbOBiAudQDUuinerUNGsgEYF4yjIOrosYIUb94rJ_y8_7w/exec", {
-        method: "POST",
-        body: data
-    })
-    .then(res => res.text())
-    .then(msg => {
-        alert(msg); // mesaj de confirmare
-        document.getElementById('attendance-form').reset(); // curăță formularul
-    })
-    .catch(err => alert("Eroare la trimiterea formularului"));
+  const data = {
+    nume: document.getElementById('name').value,
+    telefon: document.getElementById('phone').value,
+    vegetarian: document.getElementById('vegetarian').checked ? "Da" : "Nu",
+    vegan: document.getElementById('vegan').checked ? "Da" : "Nu"
+  };
+
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbwI1F3YkGUN6h7UPZQEAi98j7rdivqVxq2Gj1STF_45MDnIse4R2zYRIFdasJHogfebMg/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    if(result.status === "success"){
+      messageDiv.style.color = "green";
+      messageDiv.textContent = "Mulțumim! RSVP-ul tău a fost înregistrat.";
+      form.reset();
+    } else {
+      messageDiv.style.color = "red";
+      messageDiv.textContent = "Eroare la trimiterea formularului.";
+    }
+  } catch(err){
+    console.error(err);
+    messageDiv.style.color = "red";
+    messageDiv.textContent = "Eroare de rețea sau server.";
+  }
 });
 </script>
 
-		
+</body>
+</html>
+
 
   <!-- FOOTER -->
   <footer id="fh5co-footer" role="contentinfo">
