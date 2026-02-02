@@ -1863,3 +1863,94 @@ form label {
     padding-bottom: 50px !important;
   }
 }
+/* =======================================================
+   CUSTOM – păstrat din scriptul inițial
+   1) Prima poză de fundal (banner/header)
+   2) Secțiunea Evenimentul nostru
+   ======================================================= */
+
+
+/* -------------------------------------------------------
+   1) PRIMA IMAGINE DE FUNDAL (HEADER / COVER)
+   ------------------------------------------------------- */
+
+/* Banner principal */
+.fh5co-cover,
+#fh5co-header {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Overlay întunecat peste prima imagine */
+.fh5co-cover .overlay,
+#fh5co-header .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 1;
+}
+
+/* Conținutul să fie peste overlay */
+.fh5co-cover > .fh5co-container,
+#fh5co-header > .fh5co-container {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* -------------------------------------------------------
+   2) EVENIMENTUL NOSTRU (background + afișare casete)
+   ------------------------------------------------------- */
+
+#fh5co-event {
+  position: relative;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Overlay secțiune eveniment */
+#fh5co-event .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(139, 69, 19, 0.11) !important;
+}
+
+/* Casetele (biserică/party) */
+#fh5co-event .event-wrap {
+  border: 2px solid #fff;
+  background: rgba(0, 0, 0, 0.5) !important;
+  color: #fff !important;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+}
+
+/* Text alb complet în casete */
+#fh5co-event .event-wrap h3,
+#fh5co-event .event-wrap p,
+#fh5co-event .event-wrap span,
+#fh5co-event .event-wrap i {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+/* Responsive: pe mobil casetele se pun una sub alta */
+@media screen and (max-width: 768px) {
+  #fh5co-event .event-wrap {
+    width: 100% !important;
+    float: none !important;
+    margin-bottom: 20px;
+  }
+
+  #fh5co-event .event-wrap h3,
+  #fh5co-event .event-wrap p,
+  #fh5co-event .event-wrap span,
+  #fh5co-event .event-wrap .event-col {
+    text-align: center;
+  }
+}
