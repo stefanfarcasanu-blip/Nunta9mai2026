@@ -1980,40 +1980,35 @@ form label {
   pointer-events: none;
 }
 
-
-/* Fundal secțiune Bun venit + poze cuplu */
+/* -------------------------------------------------------
+   SECȚIUNEA BUN VENIT + POZE CUPLU (fundal responsive)
+   ------------------------------------------------------- */
 #fh5co-couple {
-  position: relative;           
+  position: relative;
   background-image: url("../images/harta.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  min-height: 600px;            
-  display: flex;
-  flex-direction: column;       /* aliniază textul și pozele vertical */
-  justify-content: center;      
-  align-items: center;
-  padding: 60px 20px;           /* spațiu sus/jos pentru text și poze */
+  background-size: cover !important;       /* scalează și taie fundalul corect */
+  background-position: center center !important; 
+  background-repeat: no-repeat !important;
+  min-height: 600px;                        /* ajustează după conținut */
 }
 
-/* Overlay întunecat */
-#fh5co-couple::before {
-  content: "";
+/* Overlay întunecat fără a bloca click-ul */
+#fh5co-couple .overlay {
   position: absolute;
-  inset: 0;                     
-  background: rgba(0,0,0,0.4);  
-  z-index: 1;                    
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3) !important; /* întunecă fundalul */
+  z-index: 1;
+  pointer-events: none;                     /* nu blochează interacțiunile */
 }
 
-/* Conținutul secțiunii peste fundal */
+/* Conținutul peste fundal */
 #fh5co-couple .container {
   position: relative;
   z-index: 10;
   color: white;
-  width: 100%;
 }
 
-/* Poze și descrieri */
+/* Pozele și descrierile cuplului */
 .couple-wrap {
   display: flex;
   justify-content: center;
@@ -2022,17 +2017,17 @@ form label {
   flex-wrap: wrap;
 }
 
-/* Mobil: crop fundal și aliniere verticală */
-@media (max-width: 767px) {
+/* Crop și aliniere fundal pe mobil */
+@media screen and (max-width: 768px) {
   #fh5co-couple {
-    min-height: 500px;                      /* ajustează după nevoie */
-    background-position: center top;        /* crop fundal în partea de sus */
+    background-position: top center !important; /* fundal crop-uit corect sus */
+    min-height: 500px;                          /* ajustează după text și poze */
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
   .couple-wrap {
-    flex-direction: column;                 /* pozele una sub alta */
+    flex-direction: column;                     /* pozele una sub alta */
     align-items: center;
     gap: 20px;
   }
@@ -2041,6 +2036,7 @@ form label {
     margin-bottom: 10px;
   }
 }
+
 
 
 
