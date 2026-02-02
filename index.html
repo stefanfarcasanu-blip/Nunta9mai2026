@@ -318,25 +318,27 @@
         </div>
       </div>
 
-      <!-- Script pentru trimiterea datelor în Google Sheet -->
-      <script>
-        document.getElementById('attendance-form').addEventListener('submit', function(e){
-          e.preventDefault();
-          const data = new FormData(this);
-          fetch("https://script.google.com/macros/s/AKfycby04VhxIDQL-1NYi4xKYnxXIbOBiAudQDUuinerUNGsgEYF4yjIOrosYIUb94rJ_y8_7w/exec", {
-            method: "POST",
-            body: data
-          })
-          .then(res => res.text())
-          .then(msg => {
-            alert(msg);
-            document.getElementById('attendance-form').reset();
-          })
-          .catch(err => alert("Eroare la trimiterea formularului"));
-        });
-      </script>
-    </div>
-  </div>
+<!-- Scriptul JS pentru trimiterea datelor în Google Sheet -->
+  <script>
+    document.getElementById('attendance-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = new FormData(this);
+      fetch("URL_WEB_APP_GOOGLE", { // înlocuiește cu linkul Web App
+        method: "POST",
+        body: data
+      })
+      .then(res => res.text())
+      .then(msg => {
+        alert(msg);
+        document.getElementById('attendance-form').reset();
+      })
+      .catch(err => alert("Eroare la trimiterea formularului"));
+    });
+  </script>
+</body>
+
+
+		
 
   <!-- FOOTER -->
   <footer id="fh5co-footer" role="contentinfo">
