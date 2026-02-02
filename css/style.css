@@ -1983,34 +1983,37 @@ form label {
 
 /* Fundal secțiune Bun venit + poze cuplu */
 #fh5co-couple {
-  position: relative;           /* asigură că overlay-ul și conținutul rămân peste fundal */
+  position: relative;           
   background-image: url("../images/harta.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  min-height: 600px;            /* înălțime pentru desktop */
+  min-height: 600px;            
   display: flex;
-  align-items: center;          /* aliniere verticală centrală */
+  flex-direction: column;       /* aliniază textul și pozele vertical */
+  justify-content: center;      
+  align-items: center;
+  padding: 60px 20px;           /* spațiu sus/jos pentru text și poze */
 }
 
 /* Overlay întunecat */
 #fh5co-couple::before {
   content: "";
   position: absolute;
-  inset: 0;                     /* acoperă tot containerul */
-  background: rgba(0,0,0,0.4);  /* întunecare fundal */
-  z-index: 1;                    /* sub conținut */
+  inset: 0;                     
+  background: rgba(0,0,0,0.4);  
+  z-index: 1;                    
 }
 
 /* Conținutul secțiunii peste fundal */
 #fh5co-couple .container {
   position: relative;
   z-index: 10;
-  width: 100%;
   color: white;
+  width: 100%;
 }
 
-/* Ajustare poze și text */
+/* Poze și descrieri */
 .couple-wrap {
   display: flex;
   justify-content: center;
@@ -2019,26 +2022,26 @@ form label {
   flex-wrap: wrap;
 }
 
-/* Mobil */
+/* Mobil: crop fundal și aliniere verticală */
 @media (max-width: 767px) {
   #fh5co-couple {
-    min-height: 400px;
-    background-position: top center;  /* crop mai bun pe mobil */
-    padding-top: 40px;
-    padding-bottom: 40px;
-    flex-direction: column;
-    justify-content: center;
+    min-height: 500px;                      /* ajustează după nevoie */
+    background-position: center top;        /* crop fundal în partea de sus */
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .couple-wrap {
-    flex-direction: column;
+    flex-direction: column;                 /* pozele una sub alta */
     align-items: center;
+    gap: 20px;
   }
 
   .couple-half {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 }
+
 
 
 
