@@ -1954,21 +1954,20 @@ form label {
     text-align: center;
   }
 }
-/* ===== Mobile: numele mai sus + mai mare ===== */
+
+/* ===== Mobile: numele centrat, mai sus și mai mare ===== */
 @media (max-width: 768px){
 
-  /* Mută conținutul mai sus în banner */
-  .fh5co-cover .display-t,
-  #fh5co-header .display-t{
-    align-items: flex-start !important;   /* nu mai e centrat pe verticală */
-    padding-top: 80px;                   /* cât de sus vrei */
+  /* Mută tot blocul de text puțin mai sus, dar rămâne centrat */
+  .fh5co-cover .display-tc,
+  #fh5co-header .display-tc{
+    transform: translateY(-40px); /* ajustează: -20px până la -80px */
   }
 
   /* Mărește numele */
   .fh5co-cover .display-tc h1,
   #fh5co-header .display-tc h1{
-    font-size: 56px !important;          /* ajustează: 50-70px */
+    font-size: 56px !important;  /* ajustează: 50-70px */
     line-height: 1.05 !important;
   }
-
 }
