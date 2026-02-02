@@ -1974,3 +1974,8 @@ form label {
 
 }
 
+/* Overlay să nu blocheze click-ul */
+#fh5co-header .overlay,
+.fh5co-cover .overlay{
+  pointer-events: none;
+}
