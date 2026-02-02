@@ -1979,20 +1979,49 @@ form label {
 .fh5co-cover .overlay{
   pointer-events: none;
 }
-/* Background imagine secțiune specifică (păstrat) */
+
+/* Background imagine secțiune specifică */
 #fh5co-couple {
+  position: relative;
   background-image: url("../images/harta.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  position: relative; /* asigură overlay/conținut */
+  min-height: 600px;
+  display: flex;
+  align-items: center;
 }
 
-/* Ajustare pentru mobil */
+#fh5co-couple::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+#fh5co-couple .container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
 @media (max-width: 767px) {
   #fh5co-couple {
-    min-height: 300px; /* ajustează după necesitate */
-    background-size: cover;
-    background-position: top center; /* crop mai bun pe mobil */
+    min-height: 400px;
+    background-position: top center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #fh5co-couple .couple-wrap {
+    flex-direction: column;
+  }
+
+  #fh5co-couple .couple-half {
+    margin-bottom: 20px;
   }
 }
