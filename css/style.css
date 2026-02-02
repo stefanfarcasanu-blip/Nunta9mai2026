@@ -2160,4 +2160,38 @@ form label {
 }
 
 
+.couple-wrap {
+    display: flex;
+    flex-wrap: wrap; /* permite să se rupă pe mobil */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* spațiu între elemente */
+}
+
+/* pentru fiecare jumătate */
+.couple-half {
+    flex: 1 1 300px; /* se ajustează în funcție de lățime */
+    max-width: 400px;
+    text-align: center;
+}
+
+/* inima din mijloc */
+.heart {
+    flex: 0 0 auto; /* să nu se întindă */
+    font-size: 2rem;
+    color: red;
+    margin: 0 20px;
+}
+
+/* responsive: pe mobil stă vertical */
+@media (max-width: 768px) {
+    .couple-wrap {
+        flex-direction: column;
+    }
+
+    .heart {
+        margin: 10px 0;
+    }
+}
+
 
