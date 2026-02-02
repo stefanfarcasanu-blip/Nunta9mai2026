@@ -2195,19 +2195,35 @@ form label {
 }
 
 
-html, body {
-    height: 100%; /* important pentru 100vh să funcționeze corect */
-    margin: 0;
-}
-
-.button-wrapper {
+.my-form {
     display: flex;
-    justify-content: center; /* centrare orizontală */
-    align-items: center;     /* centrare verticală */
-    height: 100vh;           /* întreaga înălțime a ferestrei */
+    flex-wrap: wrap;       /* permite să se rupă pe mobil */
+    gap: 10px;             /* spațiu între elemente */
+    align-items: center;   /* aliniere verticală pe desktop */
 }
 
-.button-wrapper .btn {
-    min-width: 200px;
+/* Stil pentru câmpurile formularului */
+.form-input {
+    flex: 1 1 200px;       /* se ajustează, min 200px */
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Butonul */
+.my-form .btn {
+    flex: 0 0 auto;        /* nu se întinde */
     padding: 10px 20px;
+    font-size: 1rem;
+}
+
+/* Responsive: pe mobil, butonul stă sub câmpuri */
+@media (max-width: 768px) {
+    .my-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .my-form .btn {
+        width: 100%;        /* buton full-width pe mobil */
+    }
 }
