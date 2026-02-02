@@ -323,10 +323,11 @@
     document.getElementById('attendance-form').addEventListener('submit', function(e){
       e.preventDefault();
       const data = new FormData(this);
-      fetch("https://script.google.com/macros/s/AKfycbz7wiJtLpMJ71kRXpWhELurkMBK2Wp6egDvN75YVCwoZf1wZmQ7--87wJzr_6EW13ecmA/exec", { // înlocuiește cu linkul Web App
-        method: "POST",
-        body: data
-      })
+     fetch("https://script.google.com/macros/s/AKfycbz7wiJtLpMJ71kRXpWhELurkMBK2Wp6egDvN75YVCwoZf1wZmQ7--87wJzr_6EW13ecmA/exec", {
+  method: "POST",
+  body: data
+})
+
       .then(res => res.text())
       .then(msg => {
         alert(msg);
