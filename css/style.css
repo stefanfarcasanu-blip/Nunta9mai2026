@@ -2916,3 +2916,52 @@ h2 {
   font-size: 24px;
   color: #333;
 }
+
+
+
+
+
+/* Containerul formularului */
+.rsvp-modern {
+    background-color: rgba(0,0,0,0.8); /* interior negru semi-transparent */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* chenar cu umbră */
+    max-width: 500px; /* latimea formularului */
+    margin: 0 auto; /* centrat */
+}
+
+/* Câmpurile de input */
+.rsvp-modern .rsvp-field input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Checkbox-urile */
+.rsvp-modern .rsvp-checkbox label {
+    color: white; /* text alb */
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Butonul de submit */
+.rsvp-modern .rsvp-btn {
+    width: 100%;
+    background-color: #8B4513; /* maro */
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rsvp-modern .rsvp-btn:hover {
+    background-color: #a05c2b; /* maro mai deschis la hover */
+}
