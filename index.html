@@ -339,100 +339,35 @@
   <div class="overlay"></div>
 
   <div class="container">
-
     <!-- Text informativ -->
-    <div class="row animate-box">
-      <div class="col-md-10 col-md-offset-1 text-center">
-        <p style="color:white; font-size:18px; margin-bottom:30px;">
-          Vă rugăm să confirmați prezența completând formularul de mai jos înainte de data <strong>20 aprilie 2026</strong>:
+    ...
+    <!-- FORMULAR NETLIFY -->
+    <form class="rsvp-modern" name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+      ...
+      <button type="submit" class="rsvp-btn">Trimite</button>
+    </form>
+  </div> <!-- END CONTAINER -->
+</div> <!-- END RSVP SECTION -->
+
+<!-- ====================== FOOTER ====================== -->
+<footer id="fh5co-footer" role="contentinfo" style="margin-top:50px;">
+  <div class="container">
+    <div class="row copyright">
+      <div class="col-md-12 text-center">
+        <p>
+          <small class="block">
+            © 2026 Alina & Alexandru — Website personalizat pentru invitația noastră de nuntă.
+          </small>
+          <small class="block">
+            Bazat pe un template oferit de
+            <a href="https://freehtml5.co" target="_blank" rel="noopener">FREEHTML5.co</a>,
+            modificat extensiv.
+          </small>
         </p>
       </div>
     </div>
-
-    <!-- FORMULAR NETLIFY -->
-    <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
-
-      <input type="hidden" name="form-name" value="rsvp">
-
-      <p class="hidden">
-        <label>Don't fill this out: <input name="bot-field"></label>
-      </p>
-
-      <div class="rsvp-field">
-        <input type="text" name="name" placeholder="Numele tău" required>
-      </div>
-
-      <div class="rsvp-field">
-        <input type="tel" name="phone" placeholder="Număr de telefon" required>
-      </div>
-
-      <div class="rsvp-field">
-        <input type="number" name="guests" min="1" max="10" placeholder="Număr de persoane" required>
-      </div>
-
-      <div class="rsvp-checkbox">
-        <label><input type="checkbox" name="vegetarian"> Meniu vegetarian</label>
-      </div>
-
-      <div class="rsvp-checkbox">
-        <label><input type="checkbox" name="vegan"> Meniu vegan</label>
-      </div>
-
-      <div class="rsvp-checkbox">
-        <label><input type="checkbox" name="clasic"> Meniu clasic</label>
-      </div>
-
-      <button type="submit" class="rsvp-btn">Trimite</button>
-
-    </form>
-
   </div>
-</div>
-
-
-    <!-- FOOTER -->
-    <footer id="fh5co-footer" role="contentinfo" style="margin-top:50px;">
-      <div class="container">
-        <div class="row copyright">
-          <div class="col-md-12 text-center">
-            <p>
-              <small class="block">
-                © 2026 Alina & Alexandru — Website personalizat pentru invitația noastră de nuntă.
-              </small>
-              <small class="block">
-                Bazat pe un template oferit de
-                <a href="https://freehtml5.co" target="_blank" rel="noopener">FREEHTML5.co</a>,
-                modificat extensiv.
-              </small>
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </div> <!-- END CONTAINER -->
-</div> <!-- END RSVP SECTION -->
-    <!-- FOOTER -->
-    <footer id="fh5co-footer" role="contentinfo" style="margin-top:50px;">
-      <div class="container">
-        <div class="row copyright">
-          <div class="col-md-12 text-center">
-            <p>
-              <small class="block">
-                © 2026 Alina & Alexandru — Website personalizat pentru invitația noastră de nuntă.
-              </small>
-              <small class="block">
-                Bazat pe un template oferit de
-                <a href="https://freehtml5.co" target="_blank" rel="noopener">FREEHTML5.co</a>,
-                modificat extensiv.
-              </small>
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div> <!-- END CONTAINER -->
-</div> <!-- END RSVP SECTION -->
+</footer>
   
 </script>
   <!-- JS (ordinea originală a template-ului) -->
