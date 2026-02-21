@@ -59,7 +59,7 @@ p {
   margin-bottom: 20px;
 }
 h1, h2, h3, h4, h5, h6, figure {
-  color: #000;
+  color: #fff9f9;
   font-family: "Work Sans", Arial, sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
@@ -215,74 +215,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-counter,
 #fh5co-event,
-.fh5co-bg {
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-.fh5co-bg {
-  background-position: center center;
-  width: 100%;
-  float: left;
-  position: relative;
-}
-.fh5co-video {
-  height: 450px;
-  overflow: hidden;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  border-radius: 7px;
-}
-.fh5co-video a {
-  z-index: 1001;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -45px;
-  margin-left: -45px;
-  width: 90px;
-  height: 90px;
-  display: table;
-  text-align: center;
-  background: #fff;
-  -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-}
-.fh5co-video a i {
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 40px;
-}
-/*fh5co-video .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(139, 69, 19, 0); /* maro semi-transparent */
-  /*-webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-}
-.fh5co-video:hover .overlay {
-  background: rgba(139, 69, 19, 0.5); /* maro semi-transparent */
-}
-.fh5co-video:hover a {
-  position: relative;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
-}
+
 .fh5co-cover {
   height: 900px;
   background-size: cover;
@@ -400,7 +333,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
-  margin-top: 100px; /* <- adaugă asta pentru a-l muta mai jos */
+  margin-top: 500px; /* <- adaugă asta pentru a-l muta mai jos */
 }
 @media screen and (max-width: 768px) {
   #fh5co-counter .event-wrap,
@@ -844,7 +777,7 @@ form label {
   #fh5co-header .display-tc h2,
   #fh5co-counter .display-tc h2,
   .fh5co-cover .display-tc h2 {
-    font-size: 16px;
+    font-size: 24px;
   }
 }
 #fh5co-header .display-tc .btn,
@@ -852,7 +785,7 @@ form label {
 .fh5co-cover .display-tc .btn {
   padding: 15px 20px;
   background: #fff !important;
-  color: #F14E95;
+  color:#b08f6c
   border: none !important;
   font-size: 14px;
   text-transform: uppercase;
@@ -1128,7 +1061,7 @@ form label {
   height: 90px;
   font-size: 40px;
   line-height: 40px;
-  color: #F14E95;
+  color: #ffffff;
 }
 .feature-center p, .feature-center h3 {
   margin-bottom: 30px;
@@ -1149,7 +1082,7 @@ form label {
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: bold;
-  color: #F14E95;
+  color: #ffffff;
   font-family: "Sacramento", Arial, serif;
 }
 @media screen and (max-width: 768px) {
@@ -1183,7 +1116,7 @@ form label {
   display: block;
 }
 #fh5co-testimonial .wrap-testimony .testimony-slide span a.twitter {
-  color: #F14E95;
+  color: #ffffff;
   font-weight: 300;
 }
 #fh5co-testimonial .wrap-testimony .testimony-slide figure {
@@ -1339,7 +1272,7 @@ form label {
 #fh5co-started .btn {
   height: 54px;
   border: none !important;
-  background: #F14E95;
+  background: #b08f6c;
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
@@ -1853,28 +1786,8 @@ form label {
     top: -60px !important; /* ajustare pentru mobil */
   }
 }
-/* ADAPTARE IMAGINE FUNDAL BISERICĂ & PARTY */
-@media screen and (max-width: 768px) {
-  #fh5co-couple {
-    background-size: contain !important;
-    background-position: top center !important;
-    background-repeat: no-repeat !important;
-    padding-top: 200px !important;  /* spațiu pentru a vedea toată imaginea */
-    padding-bottom: 50px !important;
-  }
-}
-/* =======================================================
-   CUSTOM – păstrat din scriptul inițial
-   1) Prima poză de fundal (banner/header)
-   2) Secțiunea Evenimentul nostru
-   ======================================================= */
 
-/* =======================================================
-   CUSTOM – FIXED (fără dubluri, fără zoom-out / bug animații)
-   1) Prima poză de fundal (banner/header)
-   2) Secțiunea Evenimentul nostru
-   3) Secțiunea Bun venit / Harta
-   ======================================================= */
+
 
 
 /* -------------------------------------------------------
@@ -1986,14 +1899,7 @@ form label {
    3) SECȚIUNEA BUN VENIT + FUNDAL HARTĂ
    ------------------------------------------------------- */
 
-#fh5co-couple {
-  position: relative;
-  background-image: url("../images/harta.jpg");
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  min-height: 600px;
-}
+
 
 /* Overlay întunecat fără a bloca click-ul */
 #fh5co-couple .overlay {
@@ -2127,4 +2033,886 @@ form label {
   margin: 0;
   font-size: 60px;
   line-height: 1;
+}
+
+
+.polaroid {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  transform: rotate(0deg);
+  transition: transform .3s ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+
+
+/* TIMELINE SECTION */
+#fh5co-timeline {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4em 0;
+  color: #fff;
+}
+
+.timeline {
+  max-width: 600px;
+  margin: 0 auto;
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  padding-left: 30px;
+  position: relative;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: -38px;
+  top: 4px;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.2);
+}
+
+.timeline-item .time {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.timeline-item .event {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+/* RSVP FORM */
+.rsvp-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rsvp-form input,
+.rsvp-form select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+}
+
+.rsvp-btn {
+  background: #c2a27e;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.rsvp-btn:hover {
+  background: #b08f6c;
+}
+
+.rsvp-success {
+  display: none;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  animation: fadeIn .6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* FINAL POETIC */
+.final-section {
+  background: #fff;
+  color: #444;
+  padding: 5em 0;
+}
+
+.final-quote {
+  font-size: 26px;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
+}
+
+.final-names {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #c2a27e;
+}
+
+
+
+/* FORMULAR RSVP MODERN */
+.rsvp-modern {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rsvp-field input {
+  width: 100%;
+  padding: 14px 20px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  background: rgba(29, 28, 28, 0.9);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.rsvp-checkbox {
+  margin: 10px 0;
+  text-align: left;
+  background: rgba(75, 73, 73, 0.85);
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.rsvp-checkbox input {
+  margin-right: 10px;
+  transform: scale(1.3);
+}
+
+.rsvp-btn {
+  background: #af8162;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.rsvp-btn:hover {
+  background: #b08f6c;
+  transform: translateY(-2px);
+}
+
+.rsvp-success {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  display: none;
+  color: #fff;
+  animation: fadeIn .6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.final-quote-card {
+  margin-top: 3rem;
+}
+
+.final-quote {
+  font-size: 24px;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.final-names {
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+
+
+#fh5co-final .event-wrap {
+  border: 2px solid #fff;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+#fh5co-rsvp-section .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.3); /* poți crește la 0.5 dacă vrei mai întunecat */
+  z-index: 1;
+}
+
+#fh5co-rsvp-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+#fh5co-rsvp-section {
+  position: relative;
+  padding: 7em 0; /* spațiu vertical frumos */
+}
+
+#fh5co-rsvp-section .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.3); /* poți crește la 0.5 dacă vrei mai întunecat */
+  z-index: 1;
+}
+
+#fh5co-rsvp-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+#fh5co-rsvp-section {
+  position: relative;
+  padding: 7em 0; /* spațiu vertical frumos */
+}
+
+
+
+#fh5co-rsvp-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+#fh5co-footer .fh5co-social-icons i {
+  color: #fff !important;
+}
+
+
+
+#fh5co-footer,
+#fh5co-footer p,
+#fh5co-footer small,
+#fh5co-footer a {
+  color: #fff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CARD ALB – IDENTIC CU EVENT-WRAP, DAR PENTRU FORMULAR ȘI MESAJ */
+.rsvp-card {
+  background: rgba(255, 255, 255, 0.95); /* alb premium */
+  border: 2px solid #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  width: 100%;
+}
+
+
+
+#fh5co-rsvp-section .event-wrap {
+  border: 2px solid #fff;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+
+#fh5co-rsvp-section {
+  position: relative;
+  padding: 7em 0;
+}
+
+#fh5co-rsvp-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+#fh5co-rsvp-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.final-quote-card {
+  color: #fff !important;
+  text-align: center;
+}
+
+
+
+
+/* ================================
+   FINAL QUOTE CARD — CUSTOM FIXES
+   ================================ */
+
+/* 1. Font identic cu restul site-ului */
+.final-quote-card {
+  font-family: "Work Sans", Arial, sans-serif !important;
+}
+
+/* 2. Text complet alb */
+.final-quote-card {
+  color: #fff !important;
+  text-align: center;
+}
+
+/* 3. Elimină suprapunerile (float din .event-wrap) */
+.final-quote-card {
+  float: none !important;
+}
+
+/* 4. Asigură spațiere corectă sub tabel */
+.final-quote-card {
+  margin-top: 2.5rem;
+}
+
+/* 5. Animație identică cu restul site-ului */
+.final-quote-card.animate-box {
+  opacity: 0; /* necesar pentru sistemul de animații al template-ului */
+}
+
+/* 6. Opțional: întârziere elegantă la apariție */
+.final-quote-card {
+  animation-delay: .4s;
+}
+
+
+
+
+/* Overlay pentru secțiunea cuplu */
+#fh5co-couple {
+  position: relative;
+  overflow: hidden; /* important dacă ai elemente animate */
+}
+
+#fh5co-couple::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* overlay-ul tău */
+  z-index: 1;
+}
+
+/* Conținutul secțiunii trebuie să fie peste overlay */
+#fh5co-couple > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* Fix pentru secțiunea header pe ecrane mari */
+#fh5co-header.fh5co-cover {
+    min-height: 100vh !important; /* secțiunea acoperă toată imaginea */
+    height: auto !important;
+    background-position: center center !important; /* poziționare corectă */
+}
+
+/* Reducem padding-ul uriaș care împinge secțiunea în jos */
+#fh5co-header .display-t,
+#fh5co-header .display-tc {
+    padding: 80px 0 100px !important; /* valori echilibrate */
+}
+
+
+
+
+/* === Background + Overlay pentru secțiunea OUR STORY === */
+
+#fh5co-couple-story {
+    position: relative;
+    background-image: url("images/Timline.png");
+    background-size: cover;
+    background-position: center;
+   background-repeat: repeat-y
+    overflow: hidden;
+}
+
+/* Overlay identic cu restul site-ului */
+#fh5co-couple-story::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25); /* poți ajusta 0.15–0.35 */
+    z-index: 1;
+}
+
+/* Conținutul secțiunii peste overlay */
+#fh5co-couple-story > .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+/* Background pentru secțiunea OUR STORY */
+#fh5co-couple-story {
+  background-image: url("../images/Timline.png"); /* <- AICI era problema */
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay identic cu restul site-ului */
+#fh5co-couple-story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+/* Conținutul peste overlay */
+#fh5co-couple-story > .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+#fh5co-couple-story .timeline {
+  border-left: none !important;
+}
+
+#fh5co-couple-story .timeline:before {
+  display: none !important;
+}
+
+
+
+/* Background pentru secțiunea OUR STORY cu zoom reglabil */
+#fh5co-couple-story {
+  background-image: url("../images/Timline.png");
+  background-size: 100%;      /* ← AICI reglezi zoom-ul */
+  background-position: center top;
+  background-repeat: repeat-y
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay identic cu restul site-ului */
+#fh5co-couple-story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+#fh5co-couple-story > .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+/* Previne suprapunerea secțiunii următoare peste OUR STORY */
+#fh5co-couple-story {
+    position: relative;
+    z-index: 2;
+}
+
+/* Secțiunea următoare NU mai urcă peste OUR STORY */
+#fh5co-rsvp-section {
+    position: relative;
+    z-index: 1;
+    margin-top: 0 !important;   /* elimină suprapunerea */
+    padding-top: 120px;         /* păstrează spațiu normal */
+}
+
+/* Previne suprapunerea secțiunii RSVP peste OUR STORY */
+#fh5co-couple-story {
+    position: relative;
+    z-index: 2;
+}
+
+/* Secțiunea RSVP nu mai urcă peste OUR STORY */
+#fh5co-rsvp-section {
+    margin-top: 0 !important;   /* elimină marginile negative */
+    padding-top: 120px !important; /* păstrează spațiu normal */
+    position: relative;
+    z-index: 1;
+}
+
+/* Previne suprapunerea secțiunii RSVP peste OUR STORY */
+#fh5co-couple-story {
+    position: relative;
+    z-index: 2;
+}
+
+/* Secțiunea RSVP nu mai urcă peste OUR STORY */
+#fh5co-rsvp-section {
+    margin-top: 0 !important;   /* elimină marginile negative */
+    padding-top: 120px !important; /* păstrează spațiu normal */
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+/* ============================
+   OUR STORY — BACKGROUND FIX FINAL
+   ============================ */
+
+/* ============================
+   OUR STORY — BACKGROUND FIX FINAL
+   ============================ */
+
+#fh5co-couple-story {
+  background-image: url("../images/Timline.png") !important;
+  background-size: contain !important;
+  background-position: top center !important;
+  background-repeat: repeat-y !important; /* MULTIPLICĂ imaginea pe verticală */
+  padding-top: 40px !important;
+  padding-bottom: 200px !important;
+  min-height: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* ============================
+   RESPONSIVE — TABLETĂ
+   ============================ */
+@media (max-width: 1024px) {
+  #fh5co-couple-story {
+    background-size: contain !important;
+  }
+}
+
+/* ============================
+   RESPONSIVE — TELEFON
+   ============================ */
+@media (max-width: 1024px) {
+  #fh5co-couple-story {
+    background-size: contain !important;
+  }
+}
+
+/* ============================
+   RESPONSIVE — TELEFON MIC
+   ============================ */
+@media (max-width: 1024px) {
+  #fh5co-couple-story {
+    background-size: contain !important;
+  }
+}
+
+
+/* OVERLAY — vizibil și centrat */
+#envelope-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.815);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* PASSPORT COVER CU IMAGINEA TA */
+#envelope-overlay .envelope {
+  width: 320px;
+  height: 450px;
+
+  background-image: url("../images/coperta pasaport.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 6px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* ASCUNDEM ORICE ALT ELEMENT */
+#envelope-overlay .seal,
+#envelope-overlay .passport-title {
+  display: none !important;
+}
+
+/* TEXT CLICK — SUB IMAGINE */
+#envelope-overlay .open-text {
+  margin-bottom: -80px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  background: rgba(0,0,0,0.35);
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+/* FINAL QUOTE CARD — chenar alb + păstrează fix-ul de suprapunere */
+.event-wrap.final-quote-card{
+  border: 2px solid #fff !important;
+  margin-bottom: 0px; /* ca să nu se mai suprapună cu tabelul */
+  clear: both;
+}
+
+
+
+
+
+/* COUPLE SECTION — card text cu fundal închis + chenar alb */
+#fh5co-couple .white-frame{
+  background: rgba(0, 0, 0, 0.5); /* fundal închis, elegant */
+  border: 2px solid #fff;         /* chenar alb */
+  border-radius: 5px;
+  padding: 30px 25px;
+  color: #fff;
+}
+/* Titlul */
+#fh5co-couple .white-frame h3{
+  color: #ffffff;   /* alb curat */
+}
+
+/* Paragrafele */
+#fh5co-couple .white-frame p{
+  color: rgba(255, 255, 255, 0.9); /* alb ușor mai soft */
+}
+
+
+.fh5co-loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../images/loader.gif) center no-repeat #fff;
+}
+.js .animate-box {
+  opacity: 0;
+}
+#fh5co-couple{
+  background-image: url("../images/harta.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=style.css.map */
+/* Eliminăm transparența pentru textul din event-wrap */
+.event-wrap h3,
+.event-wrap p,
+.event-wrap span {
+  color: rgba(255, 255, 255, 1) !important; /* alb complet */
+  opacity: 1 !important; /* elimină orice opacitate moștenită */
+}
+
+
+/* 1. Eliminăm înălțimea uriașă */
+#fh5co-couple-story {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* 2. Fixăm afișarea timeline-ului */
+#fh5co-couple-story {
+  background-size: contain !important;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 3. Eliminăm overflow-ul care permite suprapunerea */
+#fh5co-couple-story {
+  overflow: hidden !important;
+}
+
+/* 4. Spațiere normală */
+#fh5co-couple-story {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+/* FIX FINAL pentru suprapunerea hărții peste polaroide */
+#fh5co-couple-story {
+  min-height: auto !important;
+  height: auto !important;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+  background-size: contain !important;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+
+/* Extindem background-ul RSVP până la finalul site-ului */
+#fh5co-started,
+#fh5co-footer {
+  background-image: url("images/img_bg_3.jpg") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+}
+
+#fh5co-couple:last-of-type {
+  background-image: url("images/img_bg_3.jpg") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+}
+
+
+
+
+
+/* ============================
+   OUR STORY — BACKGROUND FIX FINAL
+   ============================ */
+
+#fh5co-couple-story {
+  background-image: url("../images/Timline.png") !important;
+  background-size: cover !important;         /* întinde fundalul pe toată secțiunea */
+  background-position: top center !important;
+  background-repeat: no-repeat !important;   /* nu mai repeta imaginea pe verticală */
+  padding-top: 40px !important;
+  padding-bottom: 200px !important;
+  min-height: 100vh !important;              /* cel puțin înălțimea viewport-ului */
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* ============================
+   RESPONSIVE — TABLETĂ
+   ============================ */
+@media (max-width: 1024px) {
+  #fh5co-couple-story {
+    background-size: cover !important;       /* menține acoperire completă pe tabletă */
+  }
+}
+
+/* ============================
+   RESPONSIVE — TELEFON
+   ============================ */
+@media (max-width: 768px) {
+  #fh5co-couple-story {
+    background-size: contain !important;     /* imagine complet vizibilă pe telefon */
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+/* ============================
+   RESPONSIVE — TELEFON MIC
+   ============================ */
+@media (max-width: 480px) {
+  #fh5co-couple-story {
+    padding-bottom: 150px !important;       /* ajustează padding-ul dacă e nevoie */
+  }
+}
+
+@media (max-width: 768px) {
+  #fh5co-couple-story {
+    background-size: cover !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+
+
+h2 {
+  margin-top: 100px; /* ajustează valoarea după cât vrei să coboare */
+}
+
+
+
+.font-h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #333;
 }
