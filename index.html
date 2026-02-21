@@ -109,7 +109,7 @@
           <div class="display-t">
             <div class="display-tc animate-box" data-animate-effect="fadeIn">
               <h1>Alina & Alexandru</h1>
-              <h2>Cu bagajele pline de iubire, pornim în cea mai importantă călătorie a iubirii: nunta noastră, 9 Mai 2026.</h2>
+              <h2>Cu bagajele pline de iubire, pornim în cea mai importantă călătorie: nunta noastră, 9 Mai 2026.</h2>
 
               <div class="simply-countdown simply-countdown-one"></div>
 
@@ -136,7 +136,7 @@
           <h3>9 MAI, 2026 Cluj-Napoca</h3>
           <p>Vă invităm să vă îmbarcați alături de noi în continuarea poveștii noastre de iubire.</p>
           <p>Se anunță atmosferă sclipitoare, momente speciale și turbulențe pe ringul de dans. Puneți în bagajul de mână voie bună, zâmbete și încălțăminte comodă (sau de schimb).</p>
-          <p>Ghizii voștri de onoare, Mireasa și Mirele pentru o zi:</p>
+          <p>Ghizii voștri de onoare, Mireasa și Mirele, pentru o zi:</p>
         </div>
       </div>
 
@@ -340,7 +340,7 @@
       <div class="col-md-10 col-md-offset-1 text-center">
         <!-- Text informativ -->
         <p style="color:white; font-size:18px; margin-bottom:30px;">
-          Vă rugăm să confirmați prezența completând formularul de mai jos înainte de data <strong>20 aprilie 2026</strong>:
+          Vă rugăm să confirmați prezența completând formularul de mai jos înainte de data de <strong>20 aprilie 2026</strong>:
         </p>
       </div>
     </div>
@@ -424,48 +424,142 @@
   </div> <!-- END CONTAINER -->
 </div> <!-- END RSVP SECTION -->
 
+<!-- ====================== RSVP SECTION GATA DE PUBLICAT ====================== -->
+<div id="fh5co-rsvp-section" class="fh5co-bg" 
+     style="background-image:url('images/img_bg_4.jpg'); background-size:cover; background-position:center; position:relative;">
+  <div class="overlay"></div>
+
+  <div class="container">
+    <!-- Text informativ -->
+    <div class="row animate-box">
+      <div class="col-md-10 col-md-offset-1 text-center">
+        <p style="color:white; font-size:18px; margin-bottom:30px;">
+          Vă rugăm să confirmați prezența completând formularul de mai jos înainte de data <strong>20 aprilie 2026</strong>:
+        </p>
+      </div>
+    </div>
+
+    <!-- FORMULAR -->
+    <div class="row animate-box">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="event-wrap">
+          <form class="rsvp-modern" id="attendance-form">
+
+            <!-- Nume -->
+            <div class="rsvp-field">
+              <input type="text" id="name" name="name" placeholder="Numele tău" required>
+            </div>
+
+            <!-- Telefon -->
+            <div class="rsvp-field">
+              <input type="tel" id="phone" name="phone" placeholder="Număr de telefon" required>
+            </div>
+
+            <!-- Număr de persoane -->
+            <div class="rsvp-field">
+              <input type="number" id="guests" name="guests" min="1" max="10" placeholder="Număr de persoane" required>
+            </div>
+
+            <!-- Checkbox-uri -->
+            <div class="rsvp-checkbox">
+              <label>
+                <input type="checkbox" id="vegetarian" name="vegetarian" value="yes">
+                Meniu vegetarian
+              </label>
+            </div>
+
+            <div class="rsvp-checkbox">
+              <label>
+                <input type="checkbox" id="vegan" name="vegan" value="yes">
+                Meniu vegan
+              </label>
+            </div>
+
+            <div class="rsvp-checkbox">
+              <label>
+                <input type="checkbox" id="clasic" name="clasic" value="yes">
+                Meniu clasic
+              </label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="rsvp-btn">Trimite</button>
+          </form>
+
+          <!-- Mesaj de status -->
+          <div id="rsvpMessage" style="margin-top:15px; text-align:center;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="fh5co-footer" role="contentinfo" style="margin-top:50px;">
+      <div class="container">
+        <div class="row copyright">
+          <div class="col-md-12 text-center">
+            <p>
+              <small class="block">
+                © 2026 Alina & Alexandru — Website personalizat pentru invitația noastră de nuntă.
+              </small>
+              <small class="block">
+                Bazat pe un template oferit de
+                <a href="https://freehtml5.co" target="_blank" rel="noopener">FREEHTML5.co</a>,
+                modificat extensiv.
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div> <!-- END CONTAINER -->
 </div> <!-- END RSVP SECTION -->
-  <!-- ================= SCRIPT JS PENTRU GOOGLE SHEET ================= -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById('attendance-form');
-      const messageDiv = document.getElementById('rsvpMessage');
 
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        messageDiv.style.color = "#333";
-        messageDiv.textContent = "Se trimite...";
+<!-- ====================== SCRIPT JS PENTRU GOOGLE SHEET ====================== -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById('attendance-form');
+  const messageDiv = document.getElementById('rsvpMessage');
 
-        const data = Object.fromEntries(new FormData(form).entries());
-        // dacă nu bifează checkbox, îl setăm manual "no"
-        if (!data.hasOwnProperty("vegetarian")) data["vegetarian"] = "no";
-        if (!data.hasOwnProperty("vegan")) data["vegan"] = "no";
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    messageDiv.style.color = "#333";
+    messageDiv.textContent = "Se trimite...";
 
-        try {
-          const res = await fetch("http://127.0.0.1:5000/submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-          });
+    // colectăm datele din formular
+    const data = Object.fromEntries(new FormData(form).entries());
 
-          const out = await res.json();
-          if (out.success) {
-            messageDiv.style.color = "green";
-            messageDiv.textContent = "Mulțumim! RSVP-ul tău a fost înregistrat în CSV.";
-            form.reset();
-          } else {
-            messageDiv.style.color = "red";
-            messageDiv.textContent = "Eroare: " + out.error;
-          }
-        } catch (err) {
-          console.error(err);
-          messageDiv.style.color = "red";
-          messageDiv.textContent = "Eroare la trimiterea formularului.";
-        }
+    // dacă nu bifează checkbox, îl setăm manual "no"
+    if (!data.hasOwnProperty("vegetarian")) data["vegetarian"] = "no";
+    if (!data.hasOwnProperty("vegan")) data["vegan"] = "no";
+    if (!data.hasOwnProperty("clasic")) data["clasic"] = "no";
+
+    try {
+      // URL-ul tău Google Apps Script Web App
+      const res = await fetch("https://script.google.com/macros/s/AKfycbxVgLme-8XHp7bipEYiBYq57yBPyhaDkhKZmr4fSGtsWaG0P4kXeq9u6vyV0Rd9mkapDw/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
       });
-    });
-  </script>
+
+      const out = await res.json();
+
+      if (out.success) {
+        messageDiv.style.color = "green";
+        messageDiv.textContent = "Mulțumim! RSVP-ul tău a fost înregistrat cu succes.";
+        form.reset();
+      } else {
+        messageDiv.style.color = "red";
+        messageDiv.textContent = "Eroare: " + out.error;
+      }
+
+    } catch (err) {
+      console.error(err);
+      messageDiv.style.color = "red";
+      messageDiv.textContent = "Eroare la trimiterea formularului.";
+    }
+  });
+});
+</script>
 
   <!-- JS (ordinea originală a template-ului) -->
   <script src="js/jquery.min.js"></script>
