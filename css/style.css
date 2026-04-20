@@ -2965,3 +2965,104 @@ h2 {
 .rsvp-modern .rsvp-btn:hover {
     background-color: #a05c2b; /* maro mai deschis la hover */
 }
+
+
+/* ================================================================
+   TEMĂ NEAGRĂ — FUNDAL NEGRU, POLAROIDE ȘI IMAGINI BINE VIZIBILE
+   ================================================================ */
+
+/* 1. Fundal general negru (orice spațiu dintre secțiuni devine negru) */
+html,
+body {
+  background: #000 !important;
+  color: #f1f1f1;
+}
+
+/* Loader-ul inițial pe negru (în loc de alb) */
+.fh5co-loader {
+  background-color: #000 !important;
+}
+
+/* 2. POLAROID — rame albe cu glow subtil, ca să iasă în evidență pe negru */
+.polaroid {
+  background: #ffffff !important;         /* rama albă rămâne dominantă */
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 10px 30px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(255, 255, 255, 0.08) !important;
+  border-radius: 6px;
+}
+
+.polaroid .caption {
+  color: #2a2a2a;   /* text caption clar pe rama albă */
+}
+
+/* 3. Overlay-uri mai subțiri — lăsăm pozele de fundal să se vadă mai bine pe laptop */
+.fh5co-cover .overlay,
+#fh5co-header .overlay {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+#fh5co-couple::before,
+#fh5co-couple-story::before {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Secțiunea de evenimente: un overlay foarte subțire ca să se vadă img_bg_3 */
+#fh5co-event.fh5co-bg > .overlay {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Secțiunea RSVP: overlay subțire ca să se vadă img_bg_4 */
+#fh5co-rsvp-section > .overlay {
+  background: rgba(0, 0, 0, 0.45) !important;
+}
+
+/* 4. Pe laptop / desktop asigurăm că pozele de fundal se afișează integral */
+@media (min-width: 992px) {
+  #fh5co-header,
+  .fh5co-cover,
+  #fh5co-event,
+  #fh5co-rsvp-section,
+  #fh5co-couple {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll;
+  }
+
+  /* Timeline cu pozele polaroid — fundal Timline.png complet vizibil */
+  #fh5co-couple-story {
+    background-size: cover !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+/* 5. ANIMAȚII — asigurăm că fade-in/fade-up funcționează peste fundalul negru.
+      animate.css folosește doar opacity/transform, deci nu depinde de fundal,
+      dar forțăm opacitatea finală ca nimic să nu rămână invizibil. */
+.animate-box.animated-fast,
+.animated-fast,
+.animated {
+  opacity: 1 !important;
+}
+
+/* Fallback: dacă Waypoints/JS nu pornește animațiile (ex. pe unele laptopuri),
+   după 2.5s facem vizibile toate elementele ca să nu rămână ascunse pe negru. */
+@keyframes themeBlackReveal {
+  to { opacity: 1; }
+}
+.js .animate-box {
+  animation: themeBlackReveal 0.001s ease 2.5s forwards;
+}
+
+/* 6. Footer deja e închis — doar ne asigurăm că se îmbină cu fundalul negru */
+#fh5co-footer {
+  background: #000 !important;
+}
+
+/* 7. Page wrapper transparent, ca fundalul negru al body să se vadă */
+#page {
+  background: transparent !important;
+}
